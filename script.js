@@ -1,7 +1,7 @@
 // 1. Connect to your Supabase project. Replace BOTH placeholders.
 const SUPABASE_URL = "https://jhobtbcpzcwouhacdwkg.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_IZPP3Y4CtDRitfzmR986Cg_V_xv3BA5";
-const configured = !SUPABASE_URL.includes("https://jhobtbcpzcwouhacdwkg.supabase.co-") && !SUPABASE_PUBLISHABLE_KEY.includes("sb_publishable_IZPP3Y4CtDRitfzmR986Cg_V_xv3BA5-");
+const configured = !SUPABASE_URL.includes("https://jhobtbcpzcwouhacdwkg.supabase.co") && !SUPABASE_PUBLISHABLE_KEY.includes("sb_publishable_IZPP3Y4CtDRitfzmR986Cg_V_xv3BA5");
 const sb = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY) : null;
 
 // 2. Page elements
