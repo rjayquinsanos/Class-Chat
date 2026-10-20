@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="auth-screen" class="panel auth-panel">
+      <div class="brand-mark">CC</div>
+      <p class="eyebrow">CLASSROOM CONNECTION</p>
+      <h1>Class Chat</h1>
+      <p class="muted">Sign in to join your class conversation.</p>
+      <form id="auth-form">
+        <label for="display-name">Display name <span>(sign up only)</span></label>
+        <input id="display-name" type="text" minlength="2" maxlength="24" placeholder="Your name" autocomplete="nickname">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" minlength="8" placeholder="At least 8 characters" autocomplete="current-password" required>
+        <div class="auth-actions">
+          <button type="submit" id="signup-button" class="button primary">Sign up</button>
+          <button type="button" id="login-button" class="button secondary">Log in</button>
+        </div>
+        <p id="auth-status" class="status" role="status"></p>
+      </form>
+    </section>
+
+    <section id="chat-screen" class="panel chat-panel" hidden>
+      <header class="chat-header">
+        <div>
+          <p class="eyebrow">CLASSROOM CONNECTION</p>
+          <h1>Class Chat</h1>
+          <p class="muted">Signed in as <strong id="current-name">Student</strong></p>
+        </div>
+        <button id="logout-button" class="button secondary">Log out</button>
+      </header>
+      <div class="chat-toolbar">
+        <span class="online-dot"></span><span>Class conversation</span>
+        <span class="toolbar-hint">Try <code>/weather Manila</code></span>
+      </div>
+      <div id="message-list" class="message-list" aria-live="polite"></div>
+      <form id="message-form" class="message-form">
+        <label class="sr-only" for="message-input">Write a message</label>
+        <input id="message-input" type="text" maxlength="500" placeholder="Write a message… or /weather Manila" autocomplete="off" required>
+        <button id="send-button" type="submit" class="button primary">Send</button>
+      </form>
+      <p id="chat-status" class="status" role="status"></p>
+    </section>
+    <footer>Use a throwaway password for this class project. Never share personal information.</footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.1"></script>
+  <script src="script.js"></script>
+</body>
+</html>
